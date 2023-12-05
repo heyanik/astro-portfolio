@@ -1,0 +1,43 @@
+<nav>
+  <div class="blog"><a href="/blog">Blog</a></div>
+  <div class="projects"><a href="/projects">Projects</a></div>
+  <div class="designs"><a href="/designs">Designs</a></div>
+  <div class="about"><a href="/about">About</a></div>
+</nav>
+
+<style lang="scss">
+  nav {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #000;
+
+    a {
+      color: black;
+      font-size: 1.2rem;
+      font-family: var(--navbar-font);
+    }
+    div {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.5s ease;
+    }
+    div:hover {
+      background: #adadab;
+      cursor: pointer;
+    }
+    .blog {
+      border-right: 2px solid #000;
+    }
+    .projects {
+      border-right: 2px solid #000;
+    }
+    .designs {
+      border-right: 2px solid #000;
+    }
+  }
+</style>

@@ -1,0 +1,119 @@
+---
+import { Image } from "astro:assets";
+import Hero_img from "../assets/hero-banner.png";
+import { Icon } from "astro-icon";
+---
+
+<section>
+  <div class="hero-section">
+    <Image class="hero-img" src={Hero_img} alt="Hero-banner" />
+  </div>
+  <div class="contact-section">
+    <div class="info">
+      <p>I'm a</p>
+      <p>Developer/Designer</p>
+    </div>
+  </div>
+  <div class="description">
+    <p class="col-1">Dreaming up ideas and making them</p>
+    <p class="col-2">come true is where my passion lies.</p>
+  </div>
+  <div class="contact-links">
+    <h1>Contact info</h1>
+    <div class="logo-links">
+      <a href="/"><Icon class="icon" name="mdi:account" /></a>
+      <a href="/"><Icon class="icon" name="mdi:github" /></a>
+      <a href="/"><Icon class="icon" name="mdi:linkedin" /></a>
+      <a href="/"><Icon class="icon" name="mdi:email" /></a>
+    </div>
+  </div>
+</section>
+
+<style lang="scss">
+  section {
+    .hero-section {
+    }
+
+    @media (max-width: 960px) {
+    }
+
+    @media (max-width: 500px) {
+      section {
+      }
+      .hero-section {
+        .hero-img {
+          width: 100%;
+          height: 450px;
+        }
+      }
+
+      .contact-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100%;
+        border-top: 2px solid #000;
+        border-bottom: 2px solid #000;
+
+        div {
+          width: 100%;
+        }
+        .info {
+          background: var(--color-non-primary);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          font-size: 2rem;
+          font-family: var(--navbar-font);
+          letter-spacing: -2px;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+      }
+
+      .description {
+        font-size: 1.5rem;
+
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+        }
+        .col-1 {
+          width: 100%;
+          background-color: var(--color-primary);
+          color: #fff;
+        }
+        .col-2 {
+          width: 100%;
+          background-color: var(--color-non-primary);
+          color: #000;
+          border-top: 2px solid #000;
+        }
+      }
+
+      .contact-links {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column;
+        color: #fff;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        background-color: var(--color-primary);
+        border-top: 2px solid #000;
+
+        .logo-links {
+          padding-top: 10px;
+          .icon {
+            width: 50px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+</style>
