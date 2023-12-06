@@ -5,117 +5,174 @@ import { Icon } from "astro-icon";
 ---
 
 <section>
-  <div class="hero-section">
-    <Image class="hero-img" src={Hero_img} alt="Hero-banner" />
-  </div>
-  <div class="contact-section">
-    <div class="info">
-      <p>I'm a</p>
-      <p>Developer/Designer</p>
+  <div class="main-div">
+    <div class="hero-section">
+      <Image class="hero-img" src={Hero_img} alt="Hero-banner" />
     </div>
-  </div>
-  <div class="description">
-    <p class="col-1">Dreaming up ideas and making them</p>
-    <p class="col-2">come true is where my passion lies.</p>
-  </div>
-  <div class="contact-links">
-    <h1>Contact info</h1>
-    <div class="logo-links">
-      <a href="/"><Icon class="icon" name="mdi:account" /></a>
-      <a href="/"><Icon class="icon" name="mdi:github" /></a>
-      <a href="/"><Icon class="icon" name="mdi:linkedin" /></a>
-      <a href="/"><Icon class="icon" name="mdi:email" /></a>
+    <div class="desktop-container">
+      <div class="contact-section">
+        <div class="info">
+          <p>I'm a</p>
+          <p>Developer/Designer</p>
+        </div>
+      </div>
+      <div class="description">
+        <p class="col-1">"Dreaming up ideas and making them</p>
+        <p class="col-2">come true is where my passion lies."</p>
+      </div>
+      <div class="contact-links">
+        <h1>Contact @</h1>
+        <a href="/"><Icon class="icon" name="mdi:account" /></a>
+        <a href="/"><Icon class="icon" name="mdi:github" /></a>
+        <a href="/"><Icon class="icon" name="mdi:linkedin" /></a>
+        <a href="/"><Icon class="icon" name="mdi:email" /></a>
+      </div>
     </div>
   </div>
 </section>
 
 <style lang="scss">
   section {
+    width: 100%;
+    .main-div {
+      display: flex;
+    }
     .hero-section {
+      .hero-img {
+        width: 1000px;
+        height: auto;
+      }
+    }
+
+    .desktop-container {
+      width: 100%;
+    }
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      font-size: 2rem;
+      font-weight: bolder;
+      background-color: var(--color-non-primary);
+      border-left: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+    .description {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 200px;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      color: #fff;
+      background-color: var(--color-hover);
+      border-left: 2px solid #000;
+      border-bottom: 2px solid #000;
+    }
+
+    .contact-links {
+      height: 243px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--color-non-primary);
+      border-left: 2px solid #000;
+      .icon {
+        color: #000;
+        width: 40px;
+        transition: all 0.5s ease-in-out;
+      }
+
+      .icon:hover {
+        color: rgb(167, 86, 86);
+      }
+      h1 {
+        text-transform: uppercase;
+      }
     }
 
     @media (max-width: 960px) {
     }
 
-    @media (max-width: 500px) {
-      section {
-      }
-      .hero-section {
-        .hero-img {
-          width: 100%;
-          height: 450px;
-        }
-      }
+    // @media (max-width: 500px) {
+    //   .hero-section {
+    //     .hero-img {
+    //       width: 100%;
+    //       height: 450px;
+    //     }
+    //   }
 
-      .contact-section {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        height: 100%;
-        border-top: 2px solid #000;
-        border-bottom: 2px solid #000;
+    //   .contact-section {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    //     flex-direction: column;
+    //     height: 100%;
+    //     border-top: 2px solid #000;
+    //     border-bottom: 2px solid #000;
 
-        div {
-          width: 100%;
-        }
-        .info {
-          background: var(--color-non-primary);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          font-size: 2rem;
-          font-family: var(--navbar-font);
-          letter-spacing: -2px;
-          padding-top: 10px;
-          padding-bottom: 10px;
-        }
-      }
+    //     div {
+    //       width: 100%;
+    //     }
+    //     .info {
+    //       background: var(--color-non-primary);
+    //       display: flex;
+    //       align-items: center;
+    //       justify-content: center;
+    //       flex-direction: column;
+    //       font-size: 2rem;
+    //       font-family: var(--navbar-font);
+    //       letter-spacing: -2px;
+    //       padding-top: 10px;
+    //       padding-bottom: 10px;
+    //     }
+    //   }
 
-      .description {
-        font-size: 1.5rem;
+    //   .description {
+    //     font-size: 1.5rem;
 
-        p {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-direction: column;
-        }
-        .col-1 {
-          width: 100%;
-          font-size: 1rem;
-          background-color: var(--color-primary);
-          color: #fff;
-        }
-        .col-2 {
-          width: 100%;
-          font-size: 1rem;
-          background-color: var(--color-non-primary);
-          color: #000;
-          border-top: 2px solid #000;
-        }
-      }
+    //     p {
+    //       display: flex;
+    //       justify-content: center;
+    //       align-items: center;
+    //       flex-direction: column;
+    //     }
+    //     .col-1 {
+    //       width: 100%;
+    //       font-size: 1rem;
+    //       background-color: var(--color-primary);
+    //       color: #fff;
+    //     }
+    //     .col-2 {
+    //       width: 100%;
+    //       font-size: 1rem;
+    //       background-color: var(--color-non-primary);
+    //       color: #000;
+    //       border-top: 2px solid #000;
+    //     }
+    //   }
 
-      .contact-links {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-direction: column;
-        color: #fff;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        background-color: var(--color-primary);
-        border-top: 2px solid #000;
+    //   .contact-links {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: space-evenly;
+    //     flex-direction: column;
+    //     color: #fff;
+    //     padding-top: 30px;
+    //     padding-bottom: 30px;
+    //     background-color: var(--color-primary);
+    //     border-top: 2px solid #000;
 
-        .logo-links {
-          padding-top: 10px;
-          .icon {
-            width: 50px;
-            color: #fff;
-          }
-        }
-      }
-    }
+    //     .logo-links {
+    //       padding-top: 10px;
+    //       .icon {
+    //         width: 50px;
+    //         color: #fff;
+    //       }
+    //     }
+    //   }
+    // }
   }
 </style>
