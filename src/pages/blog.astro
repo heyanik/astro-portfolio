@@ -1,0 +1,124 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const posts = await Astro.glob("../posts/*.md");
+---
+
+<Layout title="blogs">
+  <section class="blog-section">
+    <div class="blog-container">
+      {
+        posts.map((post) => (
+          <div class="blog-box">
+            <div class="blog-cnt">
+              <h1>{post.frontmatter.title}</h1>
+              <p>{post.frontmatter.date}</p>
+            </div>
+            <a class="rm-btn" href={`/${post.frontmatter.slug}`}>
+              Read <br /> More
+            </a>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<style lang="scss">
+  .blog-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+
+    .blog-container {
+      display: flex;
+      font-family: var(--header-font);
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+
+      .blog-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 700px;
+        height: 70px;
+        border: 2px solid #000;
+        border-right: none;
+
+        .rm-btn {
+          width: 80px;
+          height: 70px;
+          background: var(--color-primary);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+          font-size: 1.7rem;
+          font-family: var(--header-font);
+          line-height: 12px;
+          transition: all 0.5s ease;
+        }
+
+        .rm-btn:hover {
+          background: #000;
+        }
+
+        .blog-cnt {
+          margin-left: 10px;
+          font-family: "Times New Roman", Times, serif;
+          font-weight: 600;
+
+          h1 {
+            font-size: 1.5rem;
+          }
+          p {
+            margin: 0 !important;
+            font-size: 0.8rem;
+          }
+        }
+      }
+
+      @media (max-width: 960px) {
+        .blog-box {
+          width: 550px;
+          height: 70px;
+
+          .rm-btn {
+            font-size: 1.5rem;
+          }
+
+          .blog-cnt {
+            h1 {
+              font-size: 1.5rem;
+            }
+            p {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+
+      @media (max-width: 500px) {
+        .blog-box {
+          width: 350px;
+          height: 70px;
+
+          .rm-btn {
+            font-size: 1.2rem;
+          }
+
+          .blog-cnt {
+            h1 {
+              font-size: 1rem;
+            }
+            p {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>
