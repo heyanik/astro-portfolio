@@ -1,6 +1,6 @@
 ---
 title: Mastermosai
-description: Open source learning plateform 
+description: Opensource learning plateform 
 link: "https://mastermosai.netlify.app/"
 imagePath: "/projects/img-6.webp"
 plateformImg: "/icons/web.png"
