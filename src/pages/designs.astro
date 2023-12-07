@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 const posts = await Astro.glob("../posts/designs/*.md");
 ---
 
-<Layout title="designs">
+<Layout title="Designs">
   <section>
     <div class="design-container">
       {
@@ -11,7 +11,7 @@ const posts = await Astro.glob("../posts/designs/*.md");
           <>
             <div class="design-cnt">
               <div class="design-img">
-                <img src={post.frontmatter.imagePath} loading="lazy" />
+                <img src={post.frontmatter.imagePath} loading="lazy" sizes="" />
               </div>
               <div class="design-links">
                 <a href={post.frontmatter.link} target="_blank">

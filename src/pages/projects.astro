@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 const posts = await Astro.glob("../posts/projects/*.md");
 ---
 
-<Layout title="projects">
+<Layout title="Projects">
   <div class="project-container">
     {
       posts.map((post) => (
@@ -14,11 +14,7 @@ const posts = await Astro.glob("../posts/projects/*.md");
           </div>
           <div class="project-cnt">
             <div class="plateform">
-              <img
-                src={post.frontmatter.plateformImg}
-                height={220}
-                loading="lazy"
-              />
+              <img src={post.frontmatter.plateformImg} loading="lazy" />
             </div>
             <div class="project-ti-dis">
               <h1>{post.frontmatter.title}</h1>
@@ -85,8 +81,8 @@ const posts = await Astro.glob("../posts/projects/*.md");
           transition: all 0.5s ease;
 
           img {
-            width: 50px;
-            height: 50px;
+            width: 30px;
+            height: 30px;
           }
         }
         .project-ti-dis {
