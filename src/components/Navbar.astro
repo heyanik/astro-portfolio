@@ -22,7 +22,6 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.5s ease;
     }
 
     .blog {
@@ -58,4 +57,22 @@
     color: #fff !important;
     cursor: pointer;
   }
+  /* Active link styles */
+  .active-link {
+    background: #000;
+    color: #fff !important;
+  }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const currentLocation = window.location.pathname;
+
+    const links = document.querySelectorAll("a");
+    links.forEach((link) => {
+      if (link.getAttribute("href") === currentLocation) {
+        link.classList.add("active-link");
+      }
+    });
+  });
+</script>
