@@ -1,8 +1,8 @@
 ---
 title: GetEat
-description: Restaurant Website 
+description: Restaurant Website  asdads
 link: "https://geteat.vercel.app/"
 imagePath: "/projects/img-1.webp"
-plateformImg: "web.svg"
+plateformImg: "/icons/web.svg"
 
 ---
