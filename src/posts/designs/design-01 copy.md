@@ -1,4 +1,4 @@
 ---
-imagePath: "/projects/favicon1.png"
-link: "https://www.google.com/search?q=grid+template+maker&oq=gri&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDsyBggCEEUYOzIGCAMQRRhAMgYIBBBFGDkyCggFEAAYsQMYgAQyBggGEEUYPDIGCAcQRRg80gEIMTUzOWowajSoAgCwAgA&sourceid=chrome&ie=UTF-8"
+imagePath: "/designs/design-1.gif"
+link: "https://www.figma.com/file/W6fiFJYUq0hvRjoZBuoyoe/Recipe-Website?type=design&node-id=0%3A1&mode=design&t=Q77cBzkTaXiop3ik-1"
 ---

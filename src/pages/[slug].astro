@@ -18,7 +18,7 @@ const { Content, frontmatter } = Astro.props.post;
 ---
 
 <Layout title={frontmatter.title}>
-  <section class="page-content prose-lg">
+  <section class="page-content">
     <div class="container">
       <div class="head-content">
         <h2>{frontmatter.title}</h2>
@@ -38,7 +38,7 @@ const { Content, frontmatter } = Astro.props.post;
 
     .container {
       width: 700px;
-      height: 70px;
+      // height: 70px;
       padding: 10px;
 
       .head-content {
@@ -50,7 +50,7 @@ const { Content, frontmatter } = Astro.props.post;
         justify-content: space-between;
 
         h2 {
-          font-size: 2.5rem;
+          font-size: 2rem;
           font-weight: bold;
         }
 
@@ -72,20 +72,25 @@ const { Content, frontmatter } = Astro.props.post;
           background: var(--color-hover);
         }
       }
-      @media (max-width: 960px) {
-        .head-content {
-          h2 {
-            font-size: 2rem;
-            font-weight: bold;
-          }
-        }
+    }
+  }
+
+  @media (max-width: 960px) {
+    .head-content {
+      h2 {
+        font-size: 1.5rem !important;
+        font-weight: bold;
       }
-      @media (max-width: 500px) {
-        .head-content {
-          h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
-          }
+    }
+  }
+  @media (max-width: 500px) {
+    .container {
+      width: 100% !important;
+
+      .head-content {
+        h2 {
+          font-size: 1.5rem !important;
+          font-weight: bold;
         }
       }
     }
