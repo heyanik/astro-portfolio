@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro:assets";
 const posts = await Astro.glob("../posts/designs/*.md");
 ---
 
@@ -11,7 +12,15 @@ const posts = await Astro.glob("../posts/designs/*.md");
           <>
             <div class="design-cnt">
               <div class="design-img">
-                <img src={post.frontmatter.imagePath} loading="lazy" sizes="" />
+                <Picture
+                  src={post.frontmatter.imagePath}
+                  width={400}
+                  height={317}
+                  alt=""
+                  loading="lazy"
+                  format="wabp"
+                  class="img"
+                />
               </div>
               <div class="design-links">
                 <a href={post.frontmatter.link} target="_blank">
@@ -36,15 +45,16 @@ const posts = await Astro.glob("../posts/designs/*.md");
     padding: 10px;
 
     .design-cnt {
+      width: fit-content;
       height: 400px;
       border: 2px solid #000;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
+      background: #000;
 
       .design-img {
-        width: 100%;
         height: 317px;
         display: flex;
         justify-content: center;
@@ -71,6 +81,7 @@ const posts = await Astro.glob("../posts/designs/*.md");
 
         a:hover {
           background: var(--color-hover);
+          text-decoration: 2px underline;
         }
       }
     }
