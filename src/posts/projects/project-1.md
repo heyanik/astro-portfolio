@@ -1,8 +1,8 @@
 ---
 title: GetEat
-description: Restaurant Website  asdads
+description: GetEat is a restaurant based I Bangladesh. I use ReactJs to build this website. 
 link: "https://geteat.vercel.app/"
-imagePath: "/projects/img-1.webp"
+imagePath: "/projects/geteat.gif"
 
 
 ---

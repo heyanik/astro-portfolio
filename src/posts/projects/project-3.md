@@ -1,8 +1,8 @@
 ---
 title: CryptoDetails
-description: Realtime crypto detail site 
+description: Realtime crypto website, made with ReactJs. For styling I used TailwindCSS and the API I use is from RapidAPI.  
 link: "https://cryptodetails.vercel.app/"
-imagePath: "/projects/img-3.webp"
+imagePath: "/projects/cryptodetails.gif"
 
 
 ---

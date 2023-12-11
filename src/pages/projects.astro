@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon";
+import { Picture } from "astro:assets";
 
 const posts = await Astro.glob("../posts/projects/*.md");
 ---
@@ -9,20 +9,25 @@ const posts = await Astro.glob("../posts/projects/*.md");
   <div class="project-container">
     {
       posts.map((post) => (
-        <div class="project-box">
+        <a href={post.frontmatter.link} target="_blank" class="project-box">
           <div class="project-img">
-            <img src={post.frontmatter.imagePath} loading="lazy" />
+            <Picture
+              width={300}
+              height={300}
+              alt="project-img"
+              src={post.frontmatter.imagePath}
+              loading="lazy"
+              class="img"
+              format="wabp"
+            />
           </div>
           <div class="project-cnt">
             <div class="project-ti-dis">
-              <h1>{post.frontmatter.title}</h1>
+              <h3>{post.frontmatter.title}</h3>
               <p>{post.frontmatter.description}</p>
             </div>
-            <a href={post.frontmatter.link} target="_blank">
-              <Icon class="icon" name="uil:link" />
-            </a>
           </div>
-        </div>
+        </a>
       ))
     }
   </div>
@@ -39,30 +44,35 @@ const posts = await Astro.glob("../posts/projects/*.md");
     margin: 0 auto;
     padding: 10px;
 
+    a {
+      color: #000;
+      transition: transform 0.6s;
+    }
+    a:hover {
+      transform: scale(1.02);
+    }
+
     .project-box {
       margin-top: 20px;
-      height: 300px;
+      height: fit-content;
       display: flex;
       align-items: center;
       justify-content: space-between;
       flex-direction: column;
       border: 2px solid #000;
-      line-height: 10px;
 
       .project-img {
         width: 100%;
-        height: 220px;
         display: flex;
         justify-content: center;
 
-        img {
+        .img {
           width: 100%;
         }
       }
 
       .project-cnt {
         width: 100%;
-        height: 100px;
         background: #fff;
         display: flex;
         align-items: center;
@@ -72,6 +82,8 @@ const posts = await Astro.glob("../posts/projects/*.md");
         .project-ti-dis {
           margin-top: 20px;
           margin-left: 10px;
+          margin-right: 10px;
+          height: auto;
           h1 {
             opacity: 0.8;
           }
