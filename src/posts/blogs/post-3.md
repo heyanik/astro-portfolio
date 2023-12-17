@@ -1,6 +1,6 @@
 ---
-title: Why Astro is Gaining Popularity Among Web Developers
-slug: why-astro-is-gaining-popularity-among-web-developers
+title: Why I love Astro
+slug: why-i-love-astro
 date: 'Dec 12 - 2023'
 ---
 
